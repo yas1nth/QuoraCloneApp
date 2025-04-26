@@ -6,6 +6,7 @@ import com.example.quoraclone.services.QuestionService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,8 +30,9 @@ public class QuestionController {
   }
 
   @PostMapping
-  public Question createQuestion(@RequestBody QuestionDTO questionDTO){
-    return questionService.createQuestion(questionDTO);
+  public ResponseEntity<Question> createQuestion(@RequestBody QuestionDTO questionDTO){
+    Question question = questionService.createQuestion(questionDTO);
+    return new ResponseEntity<>(question,HttpStatus.CREATED);
   }
 
   @DeleteMapping("/{id}")

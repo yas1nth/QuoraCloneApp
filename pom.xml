@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.12.1</version>
+			<version>5.11.4</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
@@ -79,6 +79,13 @@
 			<artifactId>mockito-core</artifactId>
 			<version>5.17.0</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.12</version>
 		</dependency>
 	</dependencies>
 
