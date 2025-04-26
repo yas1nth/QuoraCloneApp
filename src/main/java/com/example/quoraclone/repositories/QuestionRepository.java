@@ -1,7 +1,6 @@
 package com.example.quoraclone.repositories;
 
 import com.example.quoraclone.models.Question;
-import com.example.quoraclone.models.Tag;
 import java.util.Set;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

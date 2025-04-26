@@ -14,9 +14,6 @@ public class UserService {
   @Autowired
   private UserRepository userRepository;
 
-  @Autowired
-  private TagRepository tagRepository;
-
   // Add your service methods here
   public List<User> getAllUsers() {
     return userRepository.findAll();
