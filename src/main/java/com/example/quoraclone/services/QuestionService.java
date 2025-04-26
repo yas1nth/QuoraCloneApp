@@ -53,7 +53,7 @@ public class QuestionService {
     questionRepository.deleteById(id);
   }
 
-  public List<Question> getAllQuestions(Set<Long> tagIds,int page,int size){
+  public List<Question> getAllQuestions(int page,int size){
     Pageable pageable = PageRequest.of(page,size);
     return questionRepository.findAll(pageable).getContent();
   }
