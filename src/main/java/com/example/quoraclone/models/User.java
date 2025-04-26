@@ -1,5 +1,6 @@
 package com.example.quoraclone.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -14,6 +15,7 @@ public class User extends BaseModel{
   private String username;
   private String password;
 
+  @JsonIgnore
   @ManyToMany
   @JoinTable(
       name = "user_tags",

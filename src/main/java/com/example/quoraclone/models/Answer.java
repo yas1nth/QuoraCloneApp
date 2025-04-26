@@ -1,6 +1,8 @@
 package com.example.quoraclone.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
@@ -23,7 +25,8 @@ public class Answer extends BaseModel{
   @JoinColumn(name = "user_id")
   private User user;
 
-  @OneToMany(mappedBy = "answer")
+  @JsonIgnore
+  @OneToMany(mappedBy = "answer",fetch = FetchType.LAZY)
   private Set<Comment> comments;
 
   @ManyToMany

@@ -28,7 +28,8 @@ public class AnswerService {
 
   public List<Answer> getAnswersByQuestionId(Long questionId,int page,int size) {
     Pageable pageable = PageRequest.of(page, size);
-    return answerRepository.findByQuestionId(questionId,pageable).getContent();
+    List<Answer> answers= answerRepository.findByQuestionId(questionId,pageable).getContent();
+    return answers;
   }
 
   public Answer createAnswer(AnswerDTO answerDTO) {

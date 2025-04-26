@@ -33,8 +33,10 @@ public class CommentService {
     comment.setContent(commentDTO.getContent());
     Optional<Answer> answer = answerRepository.findById(commentDTO.getAnswerId());
     answer.ifPresent(comment::setAnswer);
-    Optional<Comment> parentComment = commentRepository.findById(commentDTO.getParentCommentId());
-    parentComment.ifPresent(comment::setParentComment);
+    if (commentDTO.getParentCommentId() != null) {
+      Optional<Comment> parentComment = commentRepository.findById(commentDTO.getParentCommentId());
+      parentComment.ifPresent(comment::setParentComment);
+    }
     return Optional.of(commentRepository.save(comment));
   }
 
