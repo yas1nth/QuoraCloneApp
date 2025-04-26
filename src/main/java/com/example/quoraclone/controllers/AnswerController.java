@@ -41,7 +41,8 @@ public class AnswerController {
 
   @GetMapping("/question/{questionId}")
   public List<Answer> getAllAnswersByQuestionId(@PathVariable Long questionId,@RequestParam int page,@RequestParam int size){
-    return answerService.getAnswersByQuestionId(questionId,page,size);
+    List<Answer> answers = answerService.getAnswersByQuestionId(questionId,page,size);
+    return answers;
   }
 
 }
